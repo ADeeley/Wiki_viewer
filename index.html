@@ -1,18 +1,18 @@
 <DOCTYPE! html>
 <html>
     <head>
-        <title>TBC</title>
+        <title>Wiki Searcher</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="main.js"></script>
     </head>
     <body>
-        <h1>Header</h1>
-        <button onclick="getRandomArticle()">Get Random Article</button>
-        <form>
-            <input id="keywordString" type="text" name="query" placeholder="Search">
-        </form>
-            <button onclick="searchFor()">Go</button>
-        <p id="footer">By Adam Deeley</p>
-        <div id=results></div>
+        <div id="searchArea" class="centreItem">
+            <h1>Wiki Searcher</h1>
+            <button onclick="getRandomArticle()">Get Random Article</button><br>
+                <input id="keywordString" type="text" name="query" placeholder="Search">
+                <button onclick="searchFor()">Go</button>
+            <p id="footer">By Adam Deeley</p>
+        </div>
+        <div id=results class="resultsFormatting"></div>
     </body>
 </html>
