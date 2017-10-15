@@ -7,7 +7,18 @@ function displayResults(json) {
     var header = null;
     var para = null;
     var node = null;
-    // Add headers
+
+    // Check if the results div tag is already populated and remove all child nodes if
+    // it is. This avoids appending results onto an ever-growing list
+    if (document.getElementById("results").hasChildNodes()) {
+        console.log("Child nodes detected.");
+        node = document.getElementById("results");
+        let oldNode = null;
+        while (node.hasChildNodes()) {
+            node.removeChild(node.lastChild);
+        }
+    }
+
     for (var i=0; i<json[1].length; i++) {
         header = document.createElement("h3");
         header.id = "result_" + i;
@@ -21,8 +32,6 @@ function displayResults(json) {
         para.appendChild(node);
         document.getElementById("results").appendChild(para);
     }
-
-
 }
 
 function searchFor() {
