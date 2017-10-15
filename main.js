@@ -3,6 +3,22 @@ function getRandomArticle() {
     window.open("https://en.wikipedia.org/wiki/Special:Random");
 }
 
+function shiftResult() {
+    console.log("Gothere");
+    if (/container_\d/.test(event.target.id)) {
+        console.log(event.target);
+        event.target.style.transform = "translateX(10px)";
+    }
+}
+
+function reallignResult() {
+    console.log("Children" + event.target.children);
+    if (/container_\d/.test(event.target.id)) {
+        console.log(event.target);
+        event.target.style.transform = "translateX(0)";
+    }
+}
+
 function displayResults(json) {
     /**
      * Updates the HTML to display the search results and provide links to the 
@@ -27,8 +43,11 @@ function displayResults(json) {
     }
     // Populate the div tag with the id "results" with the results of the search
     // DOM: results --> divContainer --> (header, para)
-    for (var i=0; i<json[1].length; i++) {
+    for (var i=1; i<json[1].length; i++) {
         divContainer = document.createElement("div");
+        divContainer.id = "container_" + i;
+        divContainer.onmouseenter = function(){shiftResult()};
+        divContainer.onmouseleave = function(){reallignResult()};
         header = document.createElement("h3");
         header.id = "result_header" + i;
         

@@ -9,6 +9,7 @@ h1 {
 
 h3 {
     margin: 0 0 20px 0;
+    font-weight: normal;
 }
 
 a {
@@ -26,13 +27,14 @@ button {
     background-color: white;
     border: none;
     padding: 8px;
+    font-family: "Droid Serif";
 }
 
 input {
     background-color: white;
     border: none;
     padding: 8px;
-
+    font-family: "Droid Serif";
 }
 .centreItem {
     display: block;
@@ -59,4 +61,5 @@ input {
 
 #footer {
     color: #C4A77D;
+    margin: auto auto 20px;
 }
