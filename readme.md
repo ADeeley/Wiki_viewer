@@ -1,5 +1,5 @@
 # Wiki Viewer
-
+ 
 Search for and view Wikipedia articles in a convenient format.
 
 # Contributions
