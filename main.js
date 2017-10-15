@@ -19,6 +19,23 @@ function reallignResult() {
     }
 }
 
+function removePreviousResults() {
+    /**
+     * Check if the results div tag is already populated and remove all child nodes if
+     * it is. This avoids appending results onto an ever-growing list
+     */
+
+    if (document.getElementById("results").hasChildNodes()) {
+        //console.log("Child nodes detected.");
+        node = document.getElementById("results");
+        let oldNode = null;
+        //Loop over the given node, destroying child nodes until none remain
+        while (node.hasChildNodes()) {
+            node.removeChild(node.lastChild);
+        }
+    }
+}
+
 function displayResults(json) {
     /**
      * Updates the HTML to display the search results and provide links to the 
@@ -31,23 +48,18 @@ function displayResults(json) {
     var link = null;
     var odd = false;
 
-    /* Check if the results div tag is already populated and remove all child nodes if
-    it is. This avoids appending results onto an ever-growing list */
-    if (document.getElementById("results").hasChildNodes()) {
-        console.log("Child nodes detected.");
-        node = document.getElementById("results");
-        let oldNode = null;
-        while (node.hasChildNodes()) {
-            node.removeChild(node.lastChild);
-        }
-    }
+    removePreviousResults();
+
     // Populate the div tag with the id "results" with the results of the search
     // DOM: results --> divContainer --> (header, para)
     for (var i=1; i<json[1].length; i++) {
         divContainer = document.createElement("div");
         divContainer.id = "container_" + i;
+
+        // Adds dynamic movement to the result blocks
         divContainer.onmouseenter = function(){shiftResult()};
         divContainer.onmouseleave = function(){reallignResult()};
+
         header = document.createElement("h3");
         header.id = "result_header" + i;
         
