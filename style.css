@@ -1,8 +1,9 @@
 body {
-    background-color: #2F2963;
+    background-color: #282730;
+    font-family: "Droid Serif";
 }
 h1 {
-    margin: 0 0 0 0;
+    margin: 40px 0 0 0;
     color: #C4A77D;
 }
 
@@ -11,14 +12,28 @@ h3 {
 }
 
 a {
-    color: #EF946C;
+    color: #C4A77D;
+    text-decoration: none;
 }
 
 p {
     margin: 0 0 0 0;
-    color: #C4A77D;
+    font-size: 15px;
 }
 
+button {
+    margin: 10px auto 10px auto;
+    background-color: white;
+    border: none;
+    padding: 8px;
+}
+
+input {
+    background-color: white;
+    border: none;
+    padding: 8px;
+
+}
 .centreItem {
     display: block;
     margin: auto;
@@ -30,13 +45,16 @@ p {
 }
 
 .evenResult {
-    background-color: #70877F;
+    background-color: #c9c8d1;
     padding: 20px;
+    color: black;
 }
 
 .oddResult {
-    background-color: #454372;
+    margin: 1px 0 1px 0;
+    background-color: #35324c;
     padding: 20px;
+    color: white;
 }
 
 #footer {
