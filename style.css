@@ -1,3 +1,24 @@
+body {
+    background-color: #2F2963;
+}
+h1 {
+    margin: 0 0 0 0;
+    color: #C4A77D;
+}
+
+h3 {
+    margin: 0 0 20px 0;
+}
+
+a {
+    color: #EF946C;
+}
+
+p {
+    margin: 0 0 0 0;
+    color: #C4A77D;
+}
+
 .centreItem {
     display: block;
     margin: auto;
@@ -7,10 +28,17 @@
 .resultsFormatting {
     margin: auto 50px auto 50px;
 }
+
 .evenResult {
-    background-color: blue;
-}
-.oddResult {
-    background-color: grey;
+    background-color: #70877F;
+    padding: 20px;
 }
 
+.oddResult {
+    background-color: #454372;
+    padding: 20px;
+}
+
+#footer {
+    color: #C4A77D;
+}
