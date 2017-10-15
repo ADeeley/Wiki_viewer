@@ -3,8 +3,26 @@ function getRandomArticle() {
     window.open("https://en.wikipedia.org/wiki/Special:Random");
 }
 
-function processJSON() {
-    console.log("Got here");
+function displayResults(json) {
+    var header = null;
+    var para = null;
+    var node = null;
+    // Add headers
+    for (var i=0; i<json[1].length; i++) {
+        header = document.createElement("h3");
+        header.id = "result_" + i;
+        node = document.createTextNode(json[1][i]);
+        header.appendChild(node);
+        document.getElementById("results").appendChild(header);
+
+        para = document.createElement("p");
+        para.id = "result_body_" + i;
+        node = document.createTextNode(json[2][i]);
+        para.appendChild(node);
+        document.getElementById("results").appendChild(para);
+    }
+
+
 }
 
 function searchFor() {
@@ -17,6 +35,6 @@ function searchFor() {
     request.responseType = 'json';
     request.send();
     request.onload = function() {
-        console.log(request.response);
+        displayResults(request.response);
     }
 }
