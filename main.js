@@ -7,7 +7,7 @@ function shiftResult() {
     console.log("Gothere");
     if (/container_\d/.test(event.target.id)) {
         console.log(event.target);
-        event.target.style.transform = "translateX(10px)";
+        event.target.style.transform = "translate(10px, -10px)";
     }
 }
 
@@ -15,7 +15,7 @@ function reallignResult() {
     console.log("Children" + event.target.children);
     if (/container_\d/.test(event.target.id)) {
         console.log(event.target);
-        event.target.style.transform = "translateX(0)";
+        event.target.style.transform = "translate(0px, 0px)";
     }
 }
 
@@ -51,6 +51,10 @@ function displayResults(json) {
         header = document.createElement("h3");
         header.id = "result_header" + i;
         
+        // Add link to Wikipedia
+        link = document.createElement("a");
+        link.href = json[3][i];
+
         // Add alternating background colour for results
         if (odd) {
             divContainer.className += "oddResult";
@@ -58,12 +62,10 @@ function displayResults(json) {
         }
         else {
             divContainer.className += "evenResult";
+            link.className += "evenLink";
             odd = true;
         }
 
-        // Add link to Wikipedia
-        link = document.createElement("a");
-        link.href = json[3][i];
 
         node = document.createTextNode(json[1][i]);
 

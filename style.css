@@ -1,9 +1,10 @@
 body {
     background-color: #282730;
     font-family: "Droid Serif";
+    margin: 0 0 100px 0;
 }
 h1 {
-    margin: 40px 0 0 0;
+    margin: 100px 0 0 0;
     color: #C4A77D;
 }
 
@@ -25,16 +26,20 @@ p {
 button {
     margin: 10px auto 10px auto;
     background-color: white;
+    color: grey;
     border: none;
     padding: 8px;
     font-family: "Droid Serif";
+    outline: none;
 }
 
 input {
     background-color: white;
+    color: grey;
     border: none;
     padding: 8px;
     font-family: "Droid Serif";
+    outline: none;
 }
 .centreItem {
     display: block;
@@ -43,7 +48,7 @@ input {
 }
 
 .resultsFormatting {
-    margin: auto 50px auto 50px;
+    margin: auto 15% auto 15%;
 }
 
 .evenResult {
@@ -57,6 +62,10 @@ input {
     background-color: #35324c;
     padding: 20px;
     color: white;
+}
+
+.evenLink {
+    color: #282730;
 }
 
 #footer {
